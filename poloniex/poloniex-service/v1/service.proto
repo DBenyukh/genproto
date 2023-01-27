@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package poloniex.v1;
+
+import "google/api/annotations.proto";
+import "poloniex-service/v1/rpc_poloniex.proto";
+
+option go_package = "genproto/gen/go/poloniex_service/v1;poloniex_service";
+
+service PoloniexService {
+ rpc GetRT(GetRtRequest) returns (GetRtResponse) {
+  option (google.api.http) = {
+   get: "/v1/poloniex"
+  };
+ };
+
+ rpc GetKL(GetKlRequest) returns (GetKlResponse) {
+  option (google.api.http) = {
+   get: "/v1/poloniex"
+  };
+ };
+}

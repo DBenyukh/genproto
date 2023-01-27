@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package poloniex.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "genproto/gen/go/poloniex_service/v1;poloniex_service";
+
+message RecentTrade {
+  int64                     Id = 1;         // ID транзакции
+  string                    Pair = 2;       // Торговая пара
+  double                    Price = 3;      // Цена транзакции
+  double                    Amount = 4;     // Объём транзакции в базовой валюте
+  string                    Side = 5;       // Как биржа засчитала эту сделку (как buy или как sell )
+  google.protobuf.Timestamp Timestamp = 6;  // Время транзакции
+}
+
+message Kline {
+  string                    Pair = 1;         // Торговая пара
+  double                    O = 2;            // Open - цена открытия
+  double                    H = 3;            // High - максимальная цена
+  double                    L = 4;            // Low - минимальная цена
+  double                    C = 5;            // Close - цена закрытия
+  Volume                    Volume = 6;       // Объём торгов
+  string                    Timeframe = 7;    // Интервал формирования свечки
+  google.protobuf.Timestamp TsFrom = 8;       // Время начала формирования свечки
+  google.protobuf.Timestamp TsTo = 9;         // Время окончания формирования свечки
+  int64                     TradeCount = 10;  // Количество трейдов
+  int64                     Ts = 11;          // Время когда запись началась
+}
+
+message Volume {
+  double BuyBase = 1;   // Объём покупок в базовой валюте
+  double SellBase = 2;  // Объём продаж в базовой валюте
+  double BuyQuote = 3;  // Объём покупок в котируемой валюте
+  double SellQuote = 4; // Объём продаж в котируемой валюте
+}
+
+enum SubscriptionStatus {
+  SUBSCRIPTION_STATUS_UNSPECIFIED = 0;
+  SUBSCRIPTION_STATUS_FAILED = 1;
+  SUBSCRIPTION_STATUS_ALREADY_SUBSCRIPTION = 2;
+  SUBSCRIPTION_STATUS_BAD_REQUEST = 3;
+}
