@@ -2,6 +2,16 @@ version: v1
 breaking:
   use:
     - FILE
+  ignore:
+    - google
 lint:
+  enum_zero_value_suffix: _UNSPECIFIED
+
+  rpc_allow_google_protobuf_empty_requests: true
+  rpc_allow_google_protobuf_empty_responses: true
+
   use:
     - DEFAULT
+    - UNARY_RPC
+  ignore:
+    - google
