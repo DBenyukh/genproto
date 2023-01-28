@@ -1,4 +1,7 @@
 version: v1
+build:
+  roots:
+    - third_party/proto
 lint:
   enum_zero_value_suffix: _UNSPECIFIED
 
