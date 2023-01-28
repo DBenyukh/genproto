@@ -1,7 +1,8 @@
-version: v1
+version: v1beta1
 build:
   roots:
     - third_party/proto
+    - poloniex
 lint:
   enum_zero_value_suffix: _UNSPECIFIED
 
