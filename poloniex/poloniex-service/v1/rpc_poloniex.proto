@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package poloniex.v1;
 
-import "poloniex/poloniex-service/v1/shared.proto";
+import "poloniex-service/v1/shared.proto";
 
 option go_package = "genproto/gen/go/poloniex_service/v1;poloniex_service";
 

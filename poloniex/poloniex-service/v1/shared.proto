@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package poloniex.v1;
 
-import "third_party/proto/google/protobuf/timestamp.proto";
+import "google/protobuf/timestamp.proto";
 
 option go_package = "genproto/gen/go/poloniex_service/v1;poloniex_service";
 
