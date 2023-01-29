@@ -6,15 +6,6 @@ import "poloniex-service/v1/shared.proto";
 
 option go_package = "genproto/gen/go/poloniex_service/v1;poloniex_service";
 
-message GetRtRequest {
-  repeated string string = 1;
-}
-
-message GetRtResponse {
-  RecentTrade trade = 1;
-  SubscriptionStatus status = 2;
-}
-
 message GetKlRequest {
   repeated string string = 1;
 }
