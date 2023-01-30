@@ -7,7 +7,9 @@ import "poloniex-service/v1/shared.proto";
 option go_package = "genproto/gen/go/poloniex_service/v1;poloniex_service";
 
 message GetRtRequest {
-  repeated string string = 1;
+  string event = 1;
+  repeated string channel = 2;
+  repeated string symbols = 3;
 }
 
 message GetRtResponse {
