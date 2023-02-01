@@ -12,7 +12,13 @@ message GetRtRequest {
   repeated string symbols = 3;
 }
 
+message GetRtConfirmation {
+  string channel = 1;
+  string event = 2;
+  repeated string symbols = 3;
+}
+
 message GetRtResponse {
-  RecentTrade trade = 1;
-  SubscriptionStatus status = 2;
+  GetRtConfirmation confirmation = 1;
+  RecentTrade trade = 2;
 }

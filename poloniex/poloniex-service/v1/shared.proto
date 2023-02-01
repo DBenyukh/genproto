@@ -7,12 +7,14 @@ import "google/protobuf/timestamp.proto";
 option go_package = "genproto/gen/go/poloniex_service/v1;poloniex_service";
 
 message RecentTrade {
-  int64                     Id = 1;         // ID транзакции
-  string                    Pair = 2;       // Торговая пара
-  double                    Price = 3;      // Цена транзакции
-  double                    Amount = 4;     // Объём транзакции в базовой валюте
-  string                    Side = 5;       // Как биржа засчитала эту сделку (как buy или как sell )
-  google.protobuf.Timestamp Timestamp = 6;  // Время транзакции
+  string                    Symbol = 1;     // Торговая пара
+  string                    Amount = 2;     // Объём транзакции в базовой валюте
+  string                    TakerSide = 3;  // Как биржа засчитала эту сделку (как buy или как sell )
+  string                    Quantity = 4;   // Количество
+  google.protobuf.Timestamp CreateTime = 5; // Время создания трейда
+  string                    Price = 6;      // Цена транзакции
+  int64                     Id = 7;         // ID транзакции
+  google.protobuf.Timestamp Ts = 8;         // Время когда запись началась
 }
 
 message Kline {
@@ -27,6 +29,7 @@ message Kline {
   google.protobuf.Timestamp TsTo = 9;         // Время окончания формирования свечки
   int64                     TradeCount = 10;  // Количество трейдов
   int64                     Ts = 11;          // Время когда запись началась
+  string                    Quantity = 12;    // Количество проданных за 24ч
 }
 
 message Volume {
