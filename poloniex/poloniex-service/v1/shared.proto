@@ -6,6 +6,11 @@ import "google/protobuf/timestamp.proto";
 
 option go_package = "genproto/gen/go/poloniex_service/v1;poloniex_service";
 
+message Stream {
+  string channel = 1;
+  repeated RecentTrade trade = 2;
+}
+
 message RecentTrade {
   string                    Symbol = 1;     // Торговая пара
   string                    Amount = 2;     // Объём транзакции в базовой валюте
